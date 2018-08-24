@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { List } from 'immutable';
 
 @Component({
@@ -16,13 +16,10 @@ export class AppComponent implements OnInit {
     this.timer = setInterval(() => {
       this.time = new Date();
     }, 1000);
-    this.array = List([
-      'item1',
-      'item2',
-      'item3',
-      'item4',
-      'item5',
-    ]).groupBy(() => { return; });
+    this.array = List(['item1', 'item2', 'item3', 'item4', 'item5']).groupBy(
+      () => {
+        return;
+      }
+    );
   }
-
 }
